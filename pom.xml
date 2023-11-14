@@ -20,7 +20,7 @@
     </properties>
 
     <modules>
-        <module>gwtquery-core</module>
+        <module>gwtquery</module>
     </modules>
 
     <dependencyManagement>
