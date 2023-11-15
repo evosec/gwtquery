@@ -17,6 +17,17 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
+
+        <!-- jgitflow -->
+        <jgitflow.pushReleases>false</jgitflow.pushReleases>
+        <jgitflow.pushHotfixes>false</jgitflow.pushHotfixes>
+        <jgitflow.noDeploy>false</jgitflow.noDeploy>
+        <jgitflow.noReleaseBuild>false</jgitflow.noReleaseBuild>
+        <jgitflow.noFeatureBuild>false</jgitflow.noFeatureBuild>
+        <jgitflow.noHotfixBuild>false</jgitflow.noHotfixBuild>
+        <jgitflow.username>not-set</jgitflow.username>
+        <jgitflow.password>not-set</jgitflow.password>
+        <jgitflow.developmentVersion/>
     </properties>
 
     <modules>
@@ -46,8 +57,32 @@
     </dependencyManagement>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <configuration>
+                    <pushReleases>${jgitflow.pushReleases}</pushReleases>
+                    <pushHotfixes>${jgitflow.pushHotfixes}</pushHotfixes>
+                    <noDeploy>${jgitflow.noDeploy}</noDeploy>
+                    <noReleaseBuild>${jgitflow.noReleaseBuild}</noReleaseBuild>
+                    <noFeatureBuild>${jgitflow.noFeatureBuild}</noFeatureBuild>
+                    <noHotfixBuild>${jgitflow.noHotfixBuild}</noHotfixBuild>
+                    <developmentVersion>${jgitflow.developmentVersion}</developmentVersion>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <username>${jgitflow.username}</username>
+                    <password>${jgitflow.password}</password>
+                </configuration>
+            </plugin>
+        </plugins>
+
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>external.atlassian.jgitflow</groupId>
+                    <artifactId>jgitflow-maven-plugin</artifactId>
+                    <version>1.0-m5.1</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
