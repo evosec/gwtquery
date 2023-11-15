@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.googlecode.gwtquery</groupId>
         <artifactId>gwtquery-project</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtquery</artifactId>
